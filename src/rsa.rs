@@ -1,9 +1,22 @@
 pub fn decrypt(encrypted_message: i32, private_key: i32, max: i32) -> i32 {
-    encrypted_message.pow(private_key as u32) % max
+    let mut decrypted_message = 1;
+
+    for _ in 0..private_key {
+        decrypted_message = (decrypted_message * encrypted_message) % max;
+    }
+
+    decrypted_message
 }
 
 pub fn encrypt(message: i32, public_key: i32, max: i32) -> i32 {
-    message.pow(public_key as u32) % max
+    // multiply message by itself public_key times then mod by max
+    let mut encrypted_message = 1;
+
+    for _ in 0..public_key {
+        encrypted_message = (encrypted_message * message) % max;
+    }
+
+    encrypted_message
 }
 
 fn extended_euclidean_algorithm(a: i32, b: i32) -> i32 {
