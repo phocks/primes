@@ -5,8 +5,8 @@ fn main() {
     // It has to be less than the max
     let message = 4;
 
-    let prime1 = 2;
-    let prime2 = 3;
+    let prime1 = 5;
+    let prime2 = 7;
 
     let max = prime1 * prime2;
 
