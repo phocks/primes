@@ -16,11 +16,12 @@ fn main() {
     println!("The first prime is: {}", prime1);
     println!("The second prime is: {}", prime2);
 
+    // The maximum number before we wrap around
     let max = prime1 * prime2;
 
     println!("The max is: {}", max);
 
-    // Arbitrary (prime) public and (pre-calculated) private keys
+    // Arbitrary (prime) public and (calculated) private keys
     let public_key = 5;
     let private_key = calculate_private_key(prime1, prime2, public_key);
 
