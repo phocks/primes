@@ -1,4 +1,5 @@
 mod rsa;
+use rsa::{calculate_private_key, decrypt, encrypt};
 
 fn main() {
     println!("Welcome to simple RSA");
@@ -21,14 +22,14 @@ fn main() {
 
     // Arbitrary (prime) public and (pre-calculated) private keys
     let public_key = 5;
-    let private_key = rsa::calculate_private_key(prime1, prime2, public_key);
+    let private_key = calculate_private_key(prime1, prime2, public_key);
 
     println!("The public key is: {}", public_key);
     println!("The private key is: {}", private_key);
 
     // Encrypt and immediately decrypt the message
-    let encrypted_message = rsa::encrypt(message, public_key, max);
-    let decrypted_message = rsa::decrypt(encrypted_message, private_key, max);
+    let encrypted_message = encrypt(message, public_key, max);
+    let decrypted_message = decrypt(encrypted_message, private_key, max);
 
     println!("The encrypted message is: {}", encrypted_message);
     println!("The decrypted message is: {}", decrypted_message);
